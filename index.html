@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Project" content="Projeto: Processo seletivo Obuc" />
+    <meta name="author" content="Rilton Wagner de Andrade Silva" />
+    <meta
+      name="description"
+      content="Desenvolvimento de aplicação para controle de locais de trabalho"
+    />
+
+    <title>Controle de Locais de Trabalho</title>
+
+    <!-- CSS do Bootstrap -->
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Estilos -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Ao carregar a página chama a função exibir() para mostrar os dados salvos na no Array arrLocaisTrabalho na SessionStorage -->
+    <script type="text/javascript">
+      function codeAddress() {
+        exibir()
+      }
+    </script>
+
+    <script src="main.js"></script>
+  </head>
+
+  <body onload="codeAddress();">
+    <div class="header imagem">
+      <a href="#" class="logo">Controle de Locais de Trabalho</a>
+      <div class="header-right">
+        <a class="fa fa-home" href="#"></a>
+        <a class="fa fa-user" href="#"> Usuário </a>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <nav class="navbar-brand collapse.navbar-collapse">
+          <div class="col-md-12">
+            <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href=""> Administração </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Administradores </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Áreas </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Locais de Trabalho </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Habilidades </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Log </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href=""> Responsáveis </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <main class="col-md-8">
+          <h3>Locais de Trabalho</h3>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="exampleFormControlSelect1">Prédio</label>
+                <select class="form-control" name="predio" id="predio">
+                  <option>Selecione...</option>
+                  <option>Prédio 1</option>
+                  <option>Prédio 2</option>
+                  <option>Prédio 3</option>
+                  <option>Prédio 4</option>
+                  <option>Prédio 5</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlSelect1">Local de Trabalho</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Informe o local de trabalho..."
+                  aria-describedby="button-addon2"
+                  name="local_trabalho"
+                  id="local_trabalho"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-1">
+                <label style="visibility: hidden">Adicionar</label>
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="button-add"
+                    name="button-add"
+                    data-toggle="tooltip"
+                    title="Adicionar"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Prédio</th>
+                    <th>Loca de Trabalho</th>
+                    <th class="center">Ação</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
